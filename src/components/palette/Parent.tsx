@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Container,
   Row
 } from 'reactstrap';
+import { PaletteContext } from '../../context/PaletteContext';
+import Child from './Child';
 
 const Parent: React.FC = () => {
+  const palette = useContext(PaletteContext);
 
   return (
-    <Container>
-      <Row>
-        
-      </Row>
-    </Container>
+    <div>
+      <p>{palette.name}</p>
+      <Child></Child>
+    </div>
   )
 };
 

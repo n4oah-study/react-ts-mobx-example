@@ -23,13 +23,13 @@ class PaletteStore {
   setGreen() {
     this.color = Color.GREEN;
   }
-};
+}
 
-const PaletteContext = createContext<PaletteStore>(new PaletteStore(Color.RED, '빨강'));
+export const PaletteContext = createContext<PaletteStore>(new PaletteStore(Color.RED, '빨강'));
 
 interface Props {
   children: React.ReactNode
-};
+}
 
 export const PaletteProvider: React.FC<Props> = ( { children } ) => {
   const palette = useContext(PaletteContext);
