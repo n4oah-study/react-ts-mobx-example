@@ -16,3 +16,7 @@ yarn add mobx mobx-react
   - 해당 state에 변화가 없으면, 그냥 기존의 값을 사용한다.
 - Actions (액션)
   - 상태에 어떻게 변화를 일으킬 것인지 정의하는 부분
+
+## 구조
+
+- mobx로 만든 store를 context api와 같이 사용하여 hooks 문법을 사용
