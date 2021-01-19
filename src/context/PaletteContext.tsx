@@ -2,7 +2,7 @@ import React, {
   createContext,
   useContext
 } from 'react';
-import { observable } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import Color from '../constsants/Color';
 
 class PaletteStore {
@@ -14,14 +14,12 @@ class PaletteStore {
   constructor(color: Color, name: string) {
     this.color = color;
     this.name = name;
+    makeObservable(this);
   }
 
+  @action
   changeColor(color: Color) {
     this.color = color;
-  }
-
-  setGreen() {
-    this.color = Color.GREEN;
   }
 }
 

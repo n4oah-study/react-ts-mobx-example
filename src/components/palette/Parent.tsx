@@ -1,8 +1,4 @@
 import React, { useContext } from 'react';
-import {
-  Container,
-  Row
-} from 'reactstrap';
 import { PaletteContext } from '../../context/PaletteContext';
 import Child from './Child';
 
