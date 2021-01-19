@@ -22,7 +22,6 @@ const Child: React.FC = () => {
   function onChangeColorRadio(e: ChangeEvent<HTMLInputElement>) {
     const color: Color = e.target.value as Color;
     palette.changeColor(color);
-    console.log('색 변경');
   }
 
   return useObserver(() => (
