@@ -19,10 +19,6 @@ const ColorBox: React.FC<ColorBoxProps> = ({
 const Child: React.FC = () => {
   const palette = useContext(PaletteContext);
 
-  function clickChangeColorBtn() {
-    console.log('hi')
-  }
-
   function onChangeColorRadio(e: ChangeEvent<HTMLInputElement>) {
     const color: Color = e.target.value as Color;
     palette.changeColor(color);
