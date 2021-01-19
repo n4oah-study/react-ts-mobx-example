@@ -1,3 +1,4 @@
+import { useObserver } from 'mobx-react';
 import React, { useContext } from 'react';
 import { PaletteContext } from '../../context/PaletteContext';
 import Child from './Child';
@@ -5,12 +6,12 @@ import Child from './Child';
 const Parent: React.FC = () => {
   const palette = useContext(PaletteContext);
 
-  return (
+  return useObserver(() => (
     <div>
       <p>{palette.name}</p>
       <Child></Child>
     </div>
-  )
+  ))
 };
 
 export default Parent;

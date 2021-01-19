@@ -3,7 +3,9 @@ import React, {
   useContext
 } from 'react';
 import { action, makeObservable, observable } from 'mobx';
-import Color from '../constsants/Color';
+import Color, {
+  getColorName
+} from '../constsants/Color';
 
 class PaletteStore {
   @observable
@@ -11,19 +13,20 @@ class PaletteStore {
   @observable
   name: string
 
-  constructor(color: Color, name: string) {
+  constructor(color: Color) {
     this.color = color;
-    this.name = name;
+    this.name = getColorName(color);
     makeObservable(this);
   }
 
   @action
   changeColor(color: Color) {
     this.color = color;
+    this.name = getColorName(color);
   }
 }
 
-export const PaletteContext = createContext<PaletteStore>(new PaletteStore(Color.RED, '빨강'));
+export const PaletteContext = createContext<PaletteStore>(new PaletteStore(Color.RED));
 
 interface Props {
   children: React.ReactNode
