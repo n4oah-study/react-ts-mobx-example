@@ -1,7 +1,3 @@
-// export function getColorName(color: Color): string {
-//   color.
-// }
-
 enum Color {
   RED = '#ff0000',
   GREEN = '#00ff00',
