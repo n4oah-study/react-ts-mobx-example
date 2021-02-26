@@ -1,6 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Routers from './Routers';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routers from "./Routers";
 
 const App: React.FC = () => {
   return (
@@ -10,6 +10,6 @@ const App: React.FC = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

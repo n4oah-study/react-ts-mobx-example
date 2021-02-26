@@ -3,7 +3,7 @@
 ## install
 
 ```shell
-yarn add mobx mobx-react
+yarn add mobx mobx-react-lite
 ```
 
 ## MobX 개념

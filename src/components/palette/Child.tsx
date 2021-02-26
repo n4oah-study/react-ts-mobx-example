@@ -1,22 +1,19 @@
-import React, { ChangeEvent, useContext } from 'react';
-import Color from '../../constsants/Color';
-import { PaletteContext } from '../../context/PaletteContext';
-import { Input } from 'reactstrap';
-import { useObserver } from 'mobx-react';
+import React, { ChangeEvent, useContext } from "react";
+import Color from "../../constsants/Color";
+import { PaletteContext } from "../../context/PaletteContext";
+import { Input } from "reactstrap";
+import { observer } from "mobx-react-lite";
 
 interface ColorBoxProps {
-  color: Color
+  color: Color;
 }
-const ColorBox: React.FC<ColorBoxProps> = ({
-  color
-}) => {
+const ColorBox: React.FC<ColorBoxProps> = ({ color }) => {
   return (
-    <div style={{ backgroundColor: color, width: 100, height: 100 }}>
-    </div>
-  )
-}
+    <div style={{ backgroundColor: color, width: 100, height: 100 }}></div>
+  );
+};
 
-const Child: React.FC = () => {
+const Child: React.FC = observer(() => {
   const palette = useContext(PaletteContext);
 
   function onChangeColorRadio(e: ChangeEvent<HTMLInputElement>) {
@@ -24,14 +21,32 @@ const Child: React.FC = () => {
     palette.changeColor(color);
   }
 
-  return useObserver(() => (
+  return (
     <div>
       <ColorBox color={palette.color} />
-      <Input name="change-radio" type='radio' value={Color.RED} onChange={onChangeColorRadio} />빨강
-      <Input name="change-radio" type='radio' value={Color.GREEN} onChange={onChangeColorRadio} />초록
-      <Input name="change-radio" type='radio' value={Color.BLUE} onChange={onChangeColorRadio} />파랑
+      <Input
+        name="change-radio"
+        type="radio"
+        value={Color.RED}
+        onChange={onChangeColorRadio}
+      />
+      빨강
+      <Input
+        name="change-radio"
+        type="radio"
+        value={Color.GREEN}
+        onChange={onChangeColorRadio}
+      />
+      초록
+      <Input
+        name="change-radio"
+        type="radio"
+        value={Color.BLUE}
+        onChange={onChangeColorRadio}
+      />
+      파랑
     </div>
-  ))
-}
+  );
+});
 
 export default Child;
